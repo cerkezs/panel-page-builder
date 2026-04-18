@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3T8HE6SD2D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3T8HE6SD2D');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetler | Serdar ŞEKER</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%2275%22 x=%225%22 font-size=%2270%22 font-weight=%22800%22 font-family=%22Arial, sans-serif%22><tspan fill=%22white%22>S</tspan><tspan fill=%22%23007AFF%22>Ş</tspan></text></svg>">
+    
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        :root { --bg: #05070a; --accent: #007AFF; --text: #f8fafc; --text-dim: #94a3b8; }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+        
+        #vanta-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; will-change: transform; }
+
+        nav { 
+            position: fixed; top: 0; width: 100%; padding: 20px 10%; 
+            display: flex; justify-content: space-between; align-items: center; 
+            background: rgba(5, 7, 10, 0.7); backdrop-filter: blur(20px); 
+            z-index: 2000; border-bottom: 1px solid rgba(255,255,255,0.05); 
+        }
+
+        .logo { 
+            font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; text-decoration: none; 
+            color: #ffffff !important; transition: 0.4s ease; display: inline-block;
+        }
+        .logo span { color: var(--accent); transition: 0.4s ease; }
+        .logo:hover { color: var(--accent) !important; }
+        .logo:hover span { color: #ffffff !important; }
+
+        .footer-logo { font-size: 1.8rem !important; margin-bottom: 15px; }
+
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+        .hamburger { display: none; cursor: pointer; color: white; background: none; border: none; font-size: 1.5rem; }
+
+        .services-header { padding: 160px 10% 60px; text-align: center; }
+        .services-header h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 20px; }
+
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 30px; 
+            padding: 0 10% 60px; /* Alttaki buton için paddingi azalttım */
+            max-width: 1400px; 
+            margin: 0 auto; 
+        }
+        
+        .service-card { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(20px); 
+            padding: 50px; 
+            border-radius: 40px; 
+            border: 1px solid rgba(255,255,255,0.08); 
+            transition: 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .service-card:hover { border-color: var(--accent); transform: translateY(-10px); background: rgba(0, 122, 255, 0.05); }
+        .service-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 25px; display: block; }
+        .service-card h3 { font-size: 1.6rem; margin-bottom: 15px; color: #fff; }
+        .service-card p { color: var(--text-dim); line-height: 1.7; font-size: 1rem; }
+
+        /* BUTON ALANI STİLLERİ */
+        .cta-container { text-align: center; padding-bottom: 100px; }
+        .btn { padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.5s; display: inline-block; background: var(--accent); color: white; border: none; cursor: pointer; font-size: 1.1rem; }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3); }
+
+        footer { background: rgba(8, 10, 15, 0.95); padding: 80px 10% 40px !important; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 50px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .footer-col h4 { margin-bottom: 25px; color: white; font-weight: 700; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 1px; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 12px; }
+        .footer-col a { text-decoration: none; color: var(--text-dim); transition: 0.3s; font-size: 0.9rem; }
+        .footer-col a:hover { color: var(--accent); }
+        .copyright { text-align: center; color: var(--text-dim); font-size: 0.85rem; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); }
+
+        @media (max-width: 1100px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .hamburger { display: block; } .nav-links { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: var(--bg); flex-direction: column; justify-content: center; align-items: center; transition: 0.5s; } .nav-links.active { right: 0; } .services-grid { grid-template-columns: 1fr; padding: 0 5% 40px; } .service-card { padding: 40px 30px; } }
+    </style>
+</head>
+<body>
+
+    <div id="vanta-canvas"></div>
+
+    <nav>
+        <a href="index.html" class="logo">SERDAR<span>ŞEKER</span></a>
+        <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="hakkimda.html">Hakkımda</a></li>
+            <li><a href="hizmetler.html" class="active">Hizmetler</a></li>
+            <li><a href="portfolyo.html">Projeler</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <header class="services-header" data-aos="zoom-out">
+        <h1>Dijital <span class="accent-text">Çözüm</span> Mimarlığı.</h1>
+        <p style="color: var(--text-dim); max-width: 600px; margin: 20px auto 0;">Mühendislik disipliniyle işletmenizin ihtiyacı olan tüm dijital altyapıları inşa ediyoruz.</p>
+    </header>
+
+    <section class="services-grid">
+        <div class="service-card" data-aos="fade-up">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Web Tasarım</h3>
+            <p>Wix, WordPress ve Shopify tabanlı, modern UI/UX prensiplerine uygun, yüksek performanslı ve 3D derinlikli web siteleri tasarlıyoruz.</p>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-shopping-cart"></i>
+            <h3>E-Ticaret Sistemleri</h3>
+            <p>Satış odaklı, güvenli ödeme altyapılı ve kullanıcı dostu e-ticaret mağazaları kurarak dijital cironuzu artırıyoruz.</p>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-bullhorn"></i>
+            <h3>Sosyal Medya Yönetimi</h3>
+            <p>Markanızın dijital itibarını algoritma odaklı stratejilerle yönetiyor, etkileşim ve satış getiren içerik planları oluşturuyoruz.</p>
+        </div>
+    </section>
+
+    <div class="cta-container" data-aos="fade-up">
+        <p style="color: var(--text-dim); margin-bottom: 25px; font-size: 1rem;">İhtiyacınıza özel çözümler için bir adım atın.</p>
+        <a href="iletisim.html" class="btn">Detaylı Bilgi Al</a>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo footer-logo">SERDAR<span>ŞEKER</span></a>
+                <p style="margin-top: 15px; font-size: 0.95rem; color: var(--text-dim); line-height: 1.6;">Mühendislikten dijitale uzanan köprü.</p>
+                <div style="margin-top: 25px; font-size: 1.5rem;">
+                    <a href="https://www.linkedin.com/in/serdarseker/" target="_blank" style="margin-right: 20px; color:white;"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/cerkezs/" target="_blank" style="color:white;"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>HIZLI MENÜ</h4>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="hakkimda.html">Hakkımda</a></li>
+                    <li><a href="hizmetler.html">Hizmetler</a></li>
+                    <li><a href="portfolyo.html">Projeler</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>HİZMETLER</h4>
+                <ul>
+                    <li><a href="hizmetler.html">Web Tasarım</a></li>
+                    <li><a href="hizmetler.html">E-Ticaret</a></li>
+                    <li><a href="hizmetler.html">Sosyal Medya Yönetimi</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>İLETİŞİM</h4>
+                <ul>
+                    <li style="color: var(--text-dim); font-size: 0.9rem;">muh.serdarseker@gmail.com</li>
+                    <li style="color: var(--text-dim); font-size: 0.9rem;">Afyonkarahisar, Türkiye</li>
+                    <li style="margin-top: 10px;"><a href="https://wa.me/905466744528" target="_blank" style="color: #25D366; font-weight: 600;">WhatsApp Hattı</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">&copy; 2023 - Serdar ŞEKER - Tüm Hakları Saklıdır.</div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ once: true });
+        VANTA.NET({ el: "#vanta-canvas", mouseControls: true, touchControls: true, minHeight: 200.00, minWidth: 200.00, scale: 1.00, scaleMobile: 1.00, color: 0x007aff, backgroundColor: 0x05070a, points: 10.00, maxDistance: 20.00, spacing: 16.00 });
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+    </script>
+</body>
+</html>
